@@ -36,3 +36,25 @@ function increase(obj) {
 // object is passed by its reference
 increase(obj);
 console.log(obj);
+
+// Adding or Removing Properties
+
+function Circle(radius) {
+    this.radius = radius;
+    this.draw = function () {
+        console.log('draw');
+    }
+}
+
+const circle = new Circle(10);
+
+circle.location = {
+    x: 1
+};
+
+const propertyName = 'center location';
+circle.location = {
+    x: 1
+};
+
+delete circle['location'];
