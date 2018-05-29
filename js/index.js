@@ -58,3 +58,19 @@ circle.location = {
 };
 
 delete circle['location'];
+
+// To enemurate all members use a for loop
+for (let key in circle) {
+    // use typeof operator to check type of value
+    if (typeof circle[key] !== 'function')
+        console.log(key, circle[key]);
+}
+
+// To get all the keys use Object.keys
+const keys = Object.keys(circle);
+console.log(keys);
+
+// To check of the existence of a property 
+// use the in operator.
+if ('radius' in circle)
+    console.log('Circle has a radius.');
