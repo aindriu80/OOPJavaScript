@@ -22,3 +22,17 @@ x.value = 20;
 
 // Primitives are copied by their value
 // Objects are copied by their reference
+
+
+
+let obj = {
+    value: 10
+};
+
+function increase(obj) {
+    obj.value++;
+}
+
+// object is passed by its reference
+increase(obj);
+console.log(obj);
