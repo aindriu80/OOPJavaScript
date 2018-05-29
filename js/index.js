@@ -1,34 +1,24 @@
-// Factory function
-function createCircle(radius) {
-    return {
-        radius,
-        draw: function () {
-            console.log('draw');
-        }
-    };
-}
+// Value vs Reference Types.
+
+// Value type
+// using let instead of var
+let a = 10;
+let b = a;
+
+// Two independent variables
+// a is 20, b is 10
+
+a = 20;
 
 
-const circle = createCircle(1);
+// Reference type, reference is copied
+// x = 20, y = 20
+let x = {
+    value: 10
+};
+let y = x;
 
-// define constructor function
-function Circle(radius) {
-    // console.log('this', this);
-    this.radius = radius;
-    this.draw = function () {
-        console.log('draw');
-    }
-}
+x.value = 20;
 
-const Circle1 = new Function('radius', `
-this.radius = radius;
-this.draw = function () {
-    console.log('draw');
-}
-`);
-
-Circle.call({}, 1);
-Circle.apply({}, [1, 2, 3]);
-
-const circle1 = new Circle1(1);
-const another = new Circle(1);
+// Primitives are copied by their value
+// Objects are copied by their reference
