@@ -39,17 +39,20 @@ console.log(obj);
 function Circle(radius) {
   this.radius = radius;
 
-  this.defaultLocation = { x: 0, y: 0 };
+  let defaultLocation = { x: 0, y: 0 };
 
-  this.computeOptimLocation = function() {
+  let computeOptimLocation = function(factor) {
     // ...
   };
   this.draw = function() {
-    this.computeOptimLocation();
+    computeOptimLocation(0.1);
+    // default location
+
+    // this.radius
+
     console.log("draw");
   };
 }
 
 const circle = new Circle(10);
-circle.computeOptimLocation();
-circle.draw();
+circle.circle.draw();
