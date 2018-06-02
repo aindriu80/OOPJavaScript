@@ -41,3 +41,33 @@ extend(Square, Shape);
 
 const s = new Shape();
 const c = new Circle(1, 'red');
+
+// Polymorphism
+
+function Circle1() {
+
+}
+
+extend(Circle1, Shape);
+
+Circle.prototype.duplicate = function () {
+  console.log('duplicate circle');
+}
+
+function Square() {
+
+}
+
+extend(Square, Shape);
+
+Square.prototype.duplicate = function () {
+  console.log('duplicate square');
+}
+
+const shapes = [
+  new Circle(),
+  new Square()
+];
+
+for (let shape of shapes)
+  shape.duplicate();
