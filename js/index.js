@@ -1,4 +1,4 @@
-// Creating own Prototypical inheritence
+// Method Overriding
 
 function Shape(color) {
   this.color = color;
@@ -21,6 +21,12 @@ function Circle(radius, color) {
 }
 
 extend(Circle, Shape);
+
+Circle.prototype.duplicate = function () {
+  Shape.prototype.duplicate.call(this);
+
+  console.log('duplicate circle');
+}
 
 Circle.prototype.draw = function () {
   console.log('draw');
